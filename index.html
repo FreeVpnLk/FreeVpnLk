@@ -220,7 +220,7 @@
 </main>
 
 <script>
-    // ----- smart redirect -----
+    // ----- One-time redirect -----
     const moneyTag = 'https://your-moneytag-link.com'; // change
     const realGen  = '/generator';                    // change
     const moneyPaid= 'https://your-paid-moneytag.com';// change
@@ -229,17 +229,17 @@
     document.getElementById('genBtn').onclick = () => {
         if(!localStorage.getItem('gen')){
             localStorage.setItem('gen','1');
-            location.href = moneyTag;
+            location.replace(moneyTag);
         }else{
-            location.href = realGen;
+            location.replace(realGen);
         }
     };
     document.getElementById('paidBtn').onclick = () => {
         if(!localStorage.getItem('paid')){
             localStorage.setItem('paid','1');
-            location.href = moneyPaid;
+            location.replace(moneyPaid);
         }else{
-            location.href = realPaid;
+            location.replace(realPaid);
         }
     };
 </script>
